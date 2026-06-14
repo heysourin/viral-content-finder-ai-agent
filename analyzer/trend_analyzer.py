@@ -4,6 +4,8 @@ Trend Analyzer — Scores, ranks, and groups scraped posts by virality.
 import re
 from collections import defaultdict
 
+import config
+
 
 def _compute_reddit_virality(post: dict) -> float:
     """Compute virality score for a Reddit post."""
@@ -101,9 +103,9 @@ def analyze_trends(reddit_posts: list[dict], x_tweets: list[dict]) -> dict:
     }
 
     return {
-        "top_reddit": reddit_sorted[:20],
-        "top_x": x_sorted[:20],
-        "top_combined": combined[:25],
+        "top_reddit": reddit_sorted[:100],
+        "top_x": x_sorted[:100],
+        "top_combined": combined[:config.TOP_POSTS_FOR_AI],
         "summary_stats": stats,
     }
 
