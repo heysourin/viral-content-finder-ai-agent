@@ -5,7 +5,7 @@ __pycache__/
 output/
 
 # Secrets & Sessions
-cookies.json
+# cookies.json
 
 # Environment
 venv/
