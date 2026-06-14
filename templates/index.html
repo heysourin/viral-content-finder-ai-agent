@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendPulse — AI Content Idea Agent</title>
+    <meta name="description" content="Scan Reddit and X for viral posts, get AI-powered content ideas instantly.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Animated background orbs -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <div>
+                    <h1>TrendPulse</h1>
+                    <p class="tagline">AI-Powered Content Idea Agent</p>
+                </div>
+            </div>
+            <div class="header-meta">
+                <span id="timestamp" class="meta-badge">Ready to scan</span>
+            </div>
+        </header>
+
+        <!-- Scan Control -->
+        <section class="scan-section">
+            <button id="scan-btn" class="scan-btn" onclick="startScan()">
+                <span class="scan-btn-icon">🔍</span>
+                <span class="scan-btn-text">Scan for Trends</span>
+            </button>
+            <p class="scan-desc">Scrapes 10 subreddits + 10 X accounts → analyzes virality → generates content ideas</p>
+        </section>
+
+        <!-- Progress -->
+        <section id="progress-section" class="progress-section hidden">
+            <div class="progress-card glass-card">
+                <div class="progress-header">
+                    <div class="spinner"></div>
+                    <span id="progress-text">Initializing...</span>
+                </div>
+                <div class="progress-log" id="progress-log"></div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section id="results-section" class="results-section hidden">
+
+            <!-- Trend Summary -->
+            <div id="summary-card" class="summary-card glass-card hidden">
+                <div class="section-label">
+                    <span class="label-icon">🧠</span> AI Trend Summary
+                </div>
+                <p id="trend-summary" class="summary-text"></p>
+                <div class="stats-row" id="stats-row"></div>
+                <button id="retry-ai-btn" class="scan-btn hidden" onclick="startRetryAI()" style="margin-top: 1.5rem; width: auto; font-size: 0.9em; padding: 0.6rem 1.2rem; min-height: unset; border-radius: 8px;">
+                    <span class="scan-btn-icon">🤖</span>
+                    <span class="scan-btn-text">Retry AI Generation</span>
+                </button>
+            </div>
+
+            <!-- Content Ideas -->
+            <div id="ideas-section" class="hidden">
+                <h2 class="section-title">
+                    <span class="title-icon">💡</span> Content Ideas
+                </h2>
+                <div id="ideas-grid" class="ideas-grid"></div>
+            </div>
+
+            <!-- Top Reddit Posts -->
+            <div id="reddit-section" class="hidden">
+                <h2 class="section-title">
+                    <span class="title-icon">🔥</span> Top Reddit Posts
+                </h2>
+                <div id="reddit-grid" class="post-grid"></div>
+            </div>
+
+            <!-- Top X Tweets -->
+            <div id="x-section" class="hidden">
+                <h2 class="section-title">
+                    <span class="title-icon">𝕏</span> Top X Posts
+                </h2>
+                <div id="x-grid" class="post-grid"></div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>Built with Playwright + Gemini AI</p>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

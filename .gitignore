@@ -1,0 +1,13 @@
+.env
+browser_data/
+__pycache__/
+*.pyc
+output/
+
+# Secrets & Sessions
+cookies.json
+
+# Environment
+venv/
+.venv/
+.DS_Store
