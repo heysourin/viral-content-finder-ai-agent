@@ -3,4 +3,5 @@ Clone the repo and run with:
 ```bash
 python3 run.py
 ```
-- Don't forget to add twitter cookies in cookies.json at root
+- Don't forget to add twitter cookies in cookies.json at root (For twitter scraping)
+- Don't forget to add google gemini api key in .env
